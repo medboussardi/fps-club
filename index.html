@@ -21,14 +21,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+    <!-- javascript i will add it to another file for now just here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.getElementById('navbar_top').classList.add('fixed-top');
+                    // add padding top to show content behind navbar
+                    navbar_height = document.querySelector('.navbar').offsetHeight;
+                    document.body.style.paddingTop = navbar_height + 'px';
+                } else {
+                    document.getElementById('navbar_top').classList.remove('fixed-top');
+                    // remove padding top from body
+                    document.body.style.paddingTop = '0';
+                }
+            });
+        });
+    </script>
+
 </head>
 
 <body>
+    <!-- script to iconicons website to load icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <!-- The header section for the nav bar  -->
     <header>
-        <div class="nav-div">
+        <div id="navbar_top" class="nav-div">
             <nav class="navbar navbar-expand-lg navbar-dark coloring-nav">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="img/logo-circle.png" width="35" class="d-inline-block align-top" alt="website logo">
                     <h3 class="d-inline-block align-top title-logo">FPS CS CLUB</h3>
                 </a>
@@ -41,7 +62,7 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Content & Activities </a>
+                            <a class="nav-link" href="activities.html">Content & Activities </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"> Team</a>
@@ -59,11 +80,11 @@
         <!-- First to appear with button  -->
         <div class="appearence">
             <div class="font-wb">
-                <h1>FPS CS CLUB</h1>
-                <h4>One Family . Big Dream !</h4>
-                <button>About us</button>
+                <h1>FPS CS CLUB</h1> <br>
+                <h4>One Family . Big Dream !</h4><br>
+                <a href="#aboutUs" class="myButton">About US</a>
             </div>
-            <div class="about-us">
+            <div id="aboutUs" class="about-us">
                 <h2>About us</h2>
                 <p>The FPS CS CLUB was founded at Safi Polydisciplinary Faculty in 2022 by a group of students willing to give their best efforts to improve the software skills and knowledge of the students at the faculty. The club organizes activities and
                     workshops for the benefit of students by carrying out projects, establishing exchange programs, and participating in competitions with other schools . In the future, we hope to organize numerous events at the faculty. By their dedication,
@@ -81,13 +102,24 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="img/club-logo.jpg" class="card-img" style="width: 100%;" alt="...">
+                                    <img id="simo-pad" src="img/simol.jpg" class="card-img" style="width: 100%;" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Mohammed Boussardi</h5>
                                         <p class="card-text"><strong>Team Leader </strong></p>
-                                        <p class="card-text"><small class="text-muted">Second year Computer Science Student at Safi Polydisciplinary Facutly in the field of Mathematics and Computer Science </small></p>
+                                        <p class="card-text"><small class="text-muted">Second year Student at Safi Polydisciplinary Facutly in the field of Mathematics and Computer Science </small></p>
+                                        <div class="icons">
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="mail-outline"></ion-icon>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -97,13 +129,24 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="img/club-logo.jpg" class="card-img" style="width: 100%;" alt="...">
+                                    <img src="img/achaimae.jpg" class="card-img" style="width: 100%;" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Achaimae </h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h5 class="card-title">Achaimae Khalaf</h5>
+                                        <p class="card-text"><strong>Vice Leader</strong></p>
+                                        <p class="card-text"><small class="text-muted">Second year Student at Safi Polydisciplinary Faculty in the field of Mathematics and Computer Science</small></p>
+                                        <div class="icons">
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="mail-outline"></ion-icon>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -115,13 +158,24 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="img/club-logo.jpg" class="card-img" style="width: 100%;" alt="...">
+                                    <img src="img/aymen.jpg" class="card-img" style="width: 100%;" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Mohammed Aymen siyari</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h5 class="card-title">Aymen siari</h5>
+                                        <p class="card-text"><strong>Human Ressource</strong></p>
+                                        <p class="card-text"><small class="text-muted">Last year Bachelor at Safi Polydisciplinary Faculty in the field of Mathematics and Computer Science</small></p>
+                                        <div class="icons">
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="mail-outline"></ion-icon>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -131,13 +185,24 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="img/club-logo.jpg" class="card-img" style="width: 100%;" alt="...">
+                                    <img src="img/fati-zouiti.jpg" class="card-img" style="width: 100%;" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">i don't know yet</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h5 class="card-title">Fatima Zahrae zouiti</h5>
+                                        <p class="card-text"><strong>Report Writer & Photographer</strong></p>
+                                        <p class="card-text"><small class="text-muted">Second year Student at Safi Polydisciplinary Faculty in the field of Mathematics and Computer Science</small></p>
+                                        <div class="icons">
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="mail-outline"></ion-icon>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -149,18 +214,31 @@
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="img/club-logo.jpg" class="card-img" style="width: 100%;" alt="...">
+                                    <img src="img/lamia.jpg" class="card-img" style="width: 100%;" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">i don't know yet</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                        <h5 class="card-title">Lamia Bourich</h5>
+                                        <p class="card-text"><strong>Events Manager</strong></p>
+                                        <p class="card-text"><small class="text-muted">Second year Student at Safi Polydisciplinary Faculty in the field of Mathematics and Computer Science </small></p>
+                                        <div class="icons">
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-linkedin"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="logo-twitter"></ion-icon>
+                                            </a>
+                                            <a class="social-icon" href="http://" target="_blank" rel="noopener noreferrer">
+                                                <ion-icon size="large" name="mail-outline"></ion-icon>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- 
+                        if a new memeber needs to be added 
                     <div class="col-sm">
                         <div class="card mb-3" style="max-width: 540px;">
                             <div class="row no-gutters">
@@ -177,6 +255,7 @@
                             </div>
                         </div>
                     </div>
+                -->
                 </div>
             </div>
         </div>
